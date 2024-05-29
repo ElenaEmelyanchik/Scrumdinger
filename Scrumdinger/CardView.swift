@@ -11,14 +11,14 @@ struct CardView: View {
     var scrum: DailyScrum
     var body: some View {
         VStack(alignment: .leading){
-            Text(scrum.title).font(.headline)
+            Text(scrum.title).font(.headline).accessibilityAddTraits(/*@START_MENU_TOKEN@*/.isHeader/*@END_MENU_TOKEN@*/)
             Spacer()
             HStack{
-                Label("\(scrum.attendees.count)", systemImage: "person.3")
+                Label("\(scrum.attendees.count)", systemImage: "person.3").accessibilityLabel("\(scrum.attendees.count) attendees")
                 Spacer()
-                Label("\(scrum.lenghtInMinutes)", systemImage: "clock")
-            }
-        }
+                Label("\(scrum.lenghtInMinutes)", systemImage: "clock").labelStyle(.trailingIcon).accessibilityLabel("\(scrum.lenghtInMinutes) minute meeting")
+            }.font(.caption)
+        }.padding().foregroundColor(scrum.theme.accentColor)
     }
 }
 
