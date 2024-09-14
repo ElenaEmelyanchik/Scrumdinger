@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct DetailView: View {
-    let scrum: DailyScrum
+    @Binding var scrum: DailyScrum
+    @State var editedScrum: DailyScrum = DailyScrum.emptyScrum
     @State private var isPresentingEditView = false
     var body: some View {
         List{
             Section(header: Text("Meeting info")){
                 NavigationLink(
-                destination: MeetingView()){
+                destination: MeetingView(scrum: $scrum)){
                 Label("Start meeting", systemImage: "timer").font(.headline).foregroundColor(.accentColor)}
                 HStack{
                     Label("Length", systemImage: "clock")
@@ -36,7 +37,7 @@ struct DetailView: View {
             }
         }.navigationTitle(scrum.title).sheet(isPresented: $isPresentingEditView, content: {
             NavigationStack{
-                DetailEditView().navigationTitle(scrum.title).toolbar(content: {
+                DetailEditView(emptyScrum: $editedScrum).navigationTitle(scrum.title).toolbar(content: {
                     ToolbarItem(placement: .cancellationAction){
                         Button("Cancel"){
                             isPresentingEditView = false
@@ -46,6 +47,7 @@ struct DetailView: View {
                     ToolbarItem(placement: .confirmationAction){
                         Button("Done"){
                             isPresentingEditView = false
+                            scrum = editedScrum
                         }
                     }
                 })
@@ -53,6 +55,7 @@ struct DetailView: View {
         }).toolbar{
             Button(action: {
                 isPresentingEditView = true
+                editedScrum = scrum
             }){
                 Text("Edit")
             }
@@ -63,7 +66,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            DetailView(scrum: DailyScrum.sampleData[0])
+            DetailView(scrum: .constant(DailyScrum.sampleData[0]))
         }
     }
 }
