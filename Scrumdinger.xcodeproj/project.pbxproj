@@ -28,6 +28,7 @@
 		0A4E88452C96DF4D007E4318 /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E88442C96DF4D007E4318 /* MeetingFooterView.swift */; };
 		0AC90AC72C9721510028932A /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC90AC62C9721510028932A /* AVPlayer+Ding.swift */; };
 		0AC90ACA2C974DFD0028932A /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AC90AC92C974DFD0028932A /* ding.wav */; };
+		0AC90ACC2C9754260028932A /* NewScrumSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC90ACB2C9754260028932A /* NewScrumSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		0A4E88442C96DF4D007E4318 /* MeetingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingFooterView.swift; sourceTree = "<group>"; };
 		0AC90AC62C9721510028932A /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		0AC90AC92C974DFD0028932A /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		0AC90ACB2C9754260028932A /* NewScrumSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScrumSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				0A0381482C071EA30081AB79 /* TrailingIconLabelStyle.swift */,
 				0A4E88442C96DF4D007E4318 /* MeetingFooterView.swift */,
 				0A03814A2C07225A0081AB79 /* ScrumsView.swift */,
+				0AC90ACB2C9754260028932A /* NewScrumSheet.swift */,
 				0A03814C2C0731BA0081AB79 /* DetailView.swift */,
 				0A03814E2C0DCCBC0081AB79 /* DetailEditView.swift */,
 				0A0381502C0DD5B60081AB79 /* ThemeView.swift */,
@@ -327,6 +330,7 @@
 				0A0381432C0492F20081AB79 /* Theme.swift in Sources */,
 				0A03814B2C07225A0081AB79 /* ScrumsView.swift in Sources */,
 				0A03811A2C0486000081AB79 /* MeetingView.swift in Sources */,
+				0AC90ACC2C9754260028932A /* NewScrumSheet.swift in Sources */,
 				0A0381182C0486000081AB79 /* ScrumdingerApp.swift in Sources */,
 				0A0381512C0DD5B60081AB79 /* ThemeView.swift in Sources */,
 				0A0381472C0496AD0081AB79 /* CardView.swift in Sources */,
