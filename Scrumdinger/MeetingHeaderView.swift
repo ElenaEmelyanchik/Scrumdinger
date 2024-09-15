@@ -24,7 +24,9 @@ struct MeetingHeaderView: View {
     }
     var body: some View {
         VStack{
-            ProgressView(value: progress)
+            HStack{
+                ProgressView(value: progress)
+            }.padding(4).background(.black)
             HStack{
                 VStack(alignment: .leading) {
                     Text("Seconds Elapsed").font(.caption)
@@ -38,14 +40,16 @@ struct MeetingHeaderView: View {
                 }
                 
             }
-        }.accessibilityElement(children: /*@START_MENU_TOKEN@*/.ignore/*@END_MENU_TOKEN@*/)
-            .accessibilityLabel("Time remaining")
-            .accessibilityValue("\(minutesRemaining) minutes")
+        }
+        .accessibilityElement(children: /*@START_MENU_TOKEN@*/.ignore/*@END_MENU_TOKEN@*/)
+        .accessibilityLabel("Time remaining")
+        .accessibilityValue("\(minutesRemaining) minutes")
+        .padding(16)
     }
 }
 
 #Preview {
-    MeetingHeaderView(secondsElapsed: 100,
+    MeetingHeaderView(secondsElapsed: 3,
                       secondsRemaining: 200,
                       theme: DailyScrum.sampleData[0].theme).previewLayout(.sizeThatFits)
 }
