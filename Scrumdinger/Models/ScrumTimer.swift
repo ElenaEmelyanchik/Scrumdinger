@@ -26,7 +26,7 @@ final class ScrumTimer: ObservableObject {
     /// The number of seconds until all attendees have had a turn to speak.
     @Published var secondsRemaining = 0
     /// All meeting attendees, listed in the order they will speak.
-    private(set) var speakers: [Speaker] = []
+private(set) var speakers: [Speaker] = []
 
 
     /// The scrum meeting length.
