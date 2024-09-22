@@ -35,6 +35,18 @@ struct DetailView: View {
                     
                 }
             }
+            
+            Section(header: Text("History")){
+                if scrum.history.isEmpty{
+                    Label("No meeting yer", systemImage:"calendar.badge.exclamationmark")
+                }
+                ForEach(scrum.history){ history in
+                    HStack{
+                        Image(systemName: "calendar")
+                        Text(history.date, style: .date)
+                    }
+                }
+            }
         }.navigationTitle(scrum.title).sheet(isPresented: $isPresentingEditView, content: {
             NavigationStack{
                 DetailEditView(emptyScrum: $editedScrum).navigationTitle(scrum.title).toolbar(content: {

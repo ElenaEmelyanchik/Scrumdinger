@@ -25,8 +25,8 @@ struct MeetingHeaderView: View {
     var body: some View {
         VStack{
             HStack{
-                ProgressView(value: progress)
-            }.padding(4).background(.black)
+                ProgressView(value: progress).progressViewStyle(ScrumProgressViewStyle(theme: theme))
+            }
             HStack{
                 VStack(alignment: .leading) {
                     Text("Seconds Elapsed").font(.caption)
@@ -35,7 +35,7 @@ struct MeetingHeaderView: View {
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Seconds Remaining").font(.caption)
-                    Label("\(secondsRemaining)", systemImage: "hourglass.bottomhalf.fill")
+                    Label("\(secondsRemaining)", systemImage: "hourglass.bottomhalf.fill").labelStyle(.trailingIcon)
                     
                 }
                 
@@ -44,7 +44,7 @@ struct MeetingHeaderView: View {
         .accessibilityElement(children: /*@START_MENU_TOKEN@*/.ignore/*@END_MENU_TOKEN@*/)
         .accessibilityLabel("Time remaining")
         .accessibilityValue("\(minutesRemaining) minutes")
-        .padding(16)
+        .padding([.top, .horizontal])
     }
 }
 
